@@ -22,8 +22,8 @@ def predict():
         probability = float(model.predict_proba(features)[0][1])
 
         return jsonify({
-            "Fraud_Detection_status": "Fraudulent" if prediction == 1 else "Legit Transaction",
-            "Detection_probability": round(probability, 2)
+            "prediction": prediction,
+            "prediction_probability": round(probability, 2)
         })
 
     except Exception as e:
